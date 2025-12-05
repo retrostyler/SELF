@@ -117,8 +117,18 @@ export default function ProjectsManager() {
   const handleEdit = (project: Project) => {
     setEditingProject(project);
     form.reset({
-      ...project,
+      title: project.title,
+      slug: project.slug,
+      category: project.category,
+      shortDescription: project.shortDescription,
       technologies: project.technologies || [],
+      role: project.role,
+      results: project.results,
+      thumbnailUrl: project.thumbnailUrl,
+      timeline: project.timeline,
+      featured: project.featured,
+      published: project.published,
+      displayOrder: project.displayOrder,
     });
     setIsDialogOpen(true);
   };
@@ -213,7 +223,7 @@ export default function ProjectsManager() {
                       <FormItem className="flex items-center justify-between p-4 border rounded-lg">
                         <FormLabel>Featured</FormLabel>
                         <FormControl>
-                          <Switch checked={field.value} onCheckedChange={field.onChange} data-testid="switch-featured" />
+                          <Switch checked={field.value || false} onCheckedChange={field.onChange} data-testid="switch-featured" />
                         </FormControl>
                       </FormItem>
                     )} />
@@ -222,7 +232,7 @@ export default function ProjectsManager() {
                       <FormItem className="flex items-center justify-between p-4 border rounded-lg">
                         <FormLabel>Published</FormLabel>
                         <FormControl>
-                          <Switch checked={field.value} onCheckedChange={field.onChange} data-testid="switch-published" />
+                          <Switch checked={field.value || false} onCheckedChange={field.onChange} data-testid="switch-published" />
                         </FormControl>
                       </FormItem>
                     )} />

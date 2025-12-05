@@ -236,7 +236,7 @@ export default function ExperienceManager() {
                     <FormItem className="flex items-center justify-between p-4 border rounded-lg">
                       <FormLabel>Published</FormLabel>
                       <FormControl>
-                        <Switch checked={field.value} onCheckedChange={field.onChange} data-testid="switch-published" />
+                        <Switch checked={field.value || false} onCheckedChange={field.onChange} data-testid="switch-published" />
                       </FormControl>
                     </FormItem>
                   )} />

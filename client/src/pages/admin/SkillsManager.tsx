@@ -172,13 +172,13 @@ export default function SkillsManager() {
 
                   <FormField control={form.control} name="proficiency" render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Proficiency: {field.value}%</FormLabel>
+                      <FormLabel>Proficiency: {field.value ?? 0}%</FormLabel>
                       <FormControl>
                         <Slider
                           min={0}
                           max={100}
                           step={5}
-                          value={[field.value]}
+                          value={[(field.value ?? 0)]}
                           onValueChange={(values) => field.onChange(values[0])}
                           data-testid="slider-proficiency"
                         />
