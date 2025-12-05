@@ -1,0 +1,10 @@
+.git
+.gitignore
+.replit
+.env.local
+.config
+node_modules
+dist
+attached_assets
+design_guidelines.md
+*.md
