@@ -2,7 +2,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { setupAuth, isAuthenticated } from "./replitAuth";
+import { setupAuth, isAuthenticated } from "./vercelAuth";
 import {
   insertProjectSchema,
   insertExperienceSchema,
@@ -14,7 +14,7 @@ import {
 import { z } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  // Setup auth middleware (following javascript_log_in_with_replit blueprint)
+  // Setup auth middleware (local auth for development/demo)
   await setupAuth(app);
 
   // Auth routes
