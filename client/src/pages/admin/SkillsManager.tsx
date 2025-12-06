@@ -223,8 +223,12 @@ export default function SkillsManager() {
                           </Button>
                         </div>
                       </div>
-                      <div className="w-full bg-muted rounded-full h-2 mb-1">
-                        <div className="bg-primary h-2 rounded-full transition-all" style={{ width: `${skill.proficiency}%` }} />
+                      <div className="w-full bg-muted rounded-full h-2 mb-1 overflow-hidden">
+                        <div 
+                          className="bg-primary h-2 rounded-full transition-all" 
+                          style={{ width: `${skill.proficiency ?? 0}%` }}
+                          data-testid="skill-proficiency-bar"
+                        />
                       </div>
                       <p className="text-xs text-muted-foreground text-right">{skill.proficiency}%</p>
                     </div>
